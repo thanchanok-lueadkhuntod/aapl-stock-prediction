@@ -10,13 +10,14 @@ This project implements an end-to-end Machine Learning pipeline to forecast Appl
 ## Tech Stack
 * **Language:** Python
 * **Data Manipulation:** Pandas, NumPy
+* **Data Extraction:** yfinance
 * **Machine Learning:** Scikit-Learn
 * **Visualization:** Matplotlib
 
 ## Key Findings & Business Impact
 1. **Trend Confirmation:** Exploratory Data Analysis (EDA) revealed a near-perfect correlation (0.99) between the Close price and the 30-day Moving Average (MA30), making it a highly reliable trend indicator.
 2. **Model Accuracy:** The Linear Regression model achieved an **R-Squared of 0.9988** with an **RMSE of just 2.17 USD**.
-3. **Trading Strategy:** By converting the predicted prices into binary trading signals (Buy/Hold) and combining them with a dynamic stop-loss, the system is designed to reduce entry timing errors by 10%.
+3. **Trading Strategy & Business Logic:** By converting the predicted prices into binary trading signals (1 = Buy/Hold, 0 = Cash), the model shifts focus from statistical errors to actionable business metrics, allowing for the evaluation of Win Rate (Accuracy) and Recall in catching market uptrends.
 
 ## Visualizations
 Here are the key visual insights and model results from the project:
@@ -44,5 +45,12 @@ Here are the key visual insights and model results from the project:
 
 
 ## Install the required dependencies
-```bash
-pip install pandas numpy matplotlib scikit-learn
+   ```bash
+pip install pandas numpy matplotlib scikit-learn yfinance
+```
+
+## Run the predictive model and backtest simulation
+   ```bash
+python aapl_predictive.py
+```
+
